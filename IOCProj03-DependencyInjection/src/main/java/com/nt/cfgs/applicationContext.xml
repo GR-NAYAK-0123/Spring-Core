@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd">
+           
+           <!-- We just make this class as Spring bean and it is a depedent spring bean -->
+           <bean id="dt" class="java.time.LocalDate" factory-method="now" />
+           
+           <!-- This is the component scanning. Here we are telling the IOC Container to go to this package and search for @Component and make spring bean -->
+           <context:component-scan base-package="com.nt.sbeans" />
+           
+           
+</beans>
